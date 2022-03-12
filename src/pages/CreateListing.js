@@ -53,6 +53,13 @@ const CreateListing = () => {
                 });
               }}
             />
+            <label htmlFor="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              value={address}
+              onChange={() => {}}
+            />
           </form>
         </main>
       </div>

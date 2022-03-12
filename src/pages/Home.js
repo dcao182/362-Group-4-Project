@@ -19,11 +19,14 @@ function Home() {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-secondary">
           <div className="max-w-md">
-            <h1 className="mb-10 text-5xl font-bold">PRESS RELEASE</h1>
+            <h1 className="mb-10 text-5xl font-bold">
+              Hunting for a new house
+            </h1>
             <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Trying to find an easy place to hunt for a new house? Crib Hunter
+              makes it easy for everyone to search, buy, or sell a new home in
+              any area. Searching, buying, or selling a new crib has never been
+              easier. Buying or selling a house doesn't have to be stressful.
             </p>
             <button className="btn btn-primary">Get Started</button>
           </div>
@@ -42,7 +45,7 @@ function Home() {
           description="Find your place with an immersive photo experience and the most listing, including things you won't find anywhere else."
           title={"Buy a home"}
           btnContent="Search Homes"
-          link_url={"/"}
+          link_url={"/listing"}
         />
         <Card_HomePage
           imageUrl="https://www.zillowstatic.com/s3/homepage/static/Sell_a_home.webp"
@@ -50,7 +53,7 @@ function Home() {
           description="Find your place with an immersive photo experience and the most listing, including things you won't find anywhere else."
           title={"Sell a Home"}
           btnContent="GO LISTING"
-          link_url={"/sign-in"}
+          link_url={"/profile"}
         />
         <Card_HomePage
           imageUrl="https://www.zillowstatic.com/s3/homepage/static/Buy_a_home.webp"
@@ -58,7 +61,7 @@ function Home() {
           description="We're creating a seamless online experience - from shopping on the largest rental network, to applying, to paying rent."
           title={"Rent a home"}
           btnContent="Find Rentals"
-          link_url={"/"}
+          link_url={"/rent-listing"}
         />
       </div>
     </>

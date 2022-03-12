@@ -21,11 +21,11 @@ function Navbar() {
             <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
               Home
             </Link>
-            <Link to="/listing" className="btn btn-ghost btn-sm rounded-btn">
+            <Link to="/profile" className="btn btn-ghost btn-sm rounded-btn">
               Sell
             </Link>
             <Link to="/listing" className="btn btn-ghost btn-sm rounded-btn">
-              Rent
+              Buy
             </Link>
             <div className="btn btn-ghost btn-sm rounded-btn">
               <div className="dropdown dropdown-end">

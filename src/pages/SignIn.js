@@ -16,7 +16,7 @@ function SignIn() {
       const response = await signInUser(email, password);
       console.log(response);
       if (response.user) {
-        // navigate("/");
+        navigate("/profile");
       }
     } catch (e) {
       console.log(e);
