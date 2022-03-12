@@ -1,20 +1,32 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { setDoc, doc, serverTimestamp } from "firebase/firestore";
+import { auth, db } from "../firebase.config.js";
+import { toast } from "react-toastify";
 
 function SignUp() {
   const { registerUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
     try {
-      const response = registerUser(email, password);
+      const response = await registerUser(email, password);
       console.log(response);
+      const user = response.user;
+      console.log(user.uid);
+      await setDoc(doc(db, "users", user.uid), {
+        email: email,
+        timestamp: serverTimestamp(),
+      });
+      navigate("/");
     } catch (e) {
       console.log(e);
+      toast.error(e.message);
     }
     setEmail("");
     setPassword("");
@@ -43,10 +55,17 @@ function SignUp() {
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div className="card-actions justify-end">
-              <button className="btn btn-md bg-primary " type="submit">
-                Submit
-              </button>
+            <div className="card-actions justify-around">
+              <div className="card-actions">
+                <button className="btn btn-md bg-info">
+                  <Link to={"/sign-in"}>Sign In instead</Link>
+                </button>
+              </div>
+              <div className="card-actions">
+                <button className="btn btn-md bg-primary " type="submit">
+                  Submit
+                </button>
+              </div>
             </div>
           </form>
         </div>

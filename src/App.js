@@ -1,6 +1,8 @@
 import AuthContextProvider from "./contexts/AuthContext";
 import { useAuth } from "./contexts/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import PrivateRoute from "./components/PrivateRoute";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
@@ -8,6 +10,9 @@ import Listing from "./pages/Listing";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import Profile from "./pages/Profile";
+import CreateListing from "./pages/CreateListing";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   // Initialize the FirebaseUI Widget using Firebase.
@@ -25,13 +30,17 @@ function App() {
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/listing" element={<Listing />} />
-                <Route path="/profile" element={<SignIn />} />
+                <Route path="profile" element={<PrivateRoute />}>
+                  <Route path="/profile" element={<Profile />} />
+                </Route>
+                <Route path="/create-listing" element={<CreateListing />} />
                 <Route path="/*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer></Footer>
           </div>
         </Router>
+        <ToastContainer />
       </AuthContextProvider>
     </div>
   );

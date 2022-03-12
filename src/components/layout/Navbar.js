@@ -39,10 +39,10 @@ function Navbar() {
                   className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-info"
                 >
                   <li>
-                    <a className="justify-between">
-                      Profile
+                    <div className="justify-between">
+                      <Link to={"/profile"}>Profile</Link>
                       <span className="badge">New</span>
-                    </a>
+                    </div>
                   </li>
                   <li>
                     <a>Settings</a>
