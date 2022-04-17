@@ -55,32 +55,16 @@ function Listing({ listing_type }) {
     <h1>Is Loading...</h1>
   ) : listings.length > 0 ? (
     <>
-      <div className="mx-auto flex flex-col justify-center ">
+      <div className="mx-auto flex flex-col md:flex-row justify-center md:flex-wrap box-border">
         {listings.map((listing) => {
-          // <div className="">
-          //   {/* <SellListingItem
-          //     imageUrl={listing.data.imgUrl[0]}
-          //     imageAlt={"House for Sale"}
-          //     fullAddress={listing.data.fullAddress}
-          //     price={listing.data.price}
-          //     btnContent={"Learn More"}
-          //     id={listing.id}
-          //     key={listing.id}
-          //   /> */}
-          //   <h1>Listings</h1>;
-          // </div>;
           return (
-            <div className=" m-4">
+            <div className="md:w-96 md:min-w-96 m-2">
               <div
                 key={listing.id}
-                className="card md:card-side bg-base-100 shadow-xl"
+                className="card card-side bg-base-100 shadow-xl"
               >
                 <figure>
-                  <img
-                    src={listing.data.images}
-                    alt={"House For Sale"}
-                    width={600}
-                  />
+                  <img src={listing.data.images} alt={"House For Sale"} />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{listing.data.fullAddress}</h2>
