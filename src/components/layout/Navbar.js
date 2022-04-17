@@ -22,10 +22,19 @@ function Navbar() {
               Home
             </Link>
             <Link to="/profile" className="btn btn-ghost btn-sm rounded-btn">
-              Sell
+              Listing
             </Link>
-            <Link to="/listing" className="btn btn-ghost btn-sm rounded-btn">
+            <Link
+              to="/sell_listing"
+              className="btn btn-ghost btn-sm rounded-btn"
+            >
               Buy
+            </Link>
+            <Link
+              to="/rent_listing"
+              className="btn btn-ghost btn-sm rounded-btn"
+            >
+              Rent
             </Link>
             <div className="btn btn-ghost btn-sm rounded-btn">
               <div className="dropdown dropdown-end">

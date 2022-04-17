@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Profile() {
   const { currentUser } = useAuth();
+  console.log(currentUser.uid);
   useEffect(() => {});
   return currentUser ? (
     <>

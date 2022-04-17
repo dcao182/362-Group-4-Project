@@ -45,13 +45,13 @@ function Home() {
           description="Find your place with an immersive photo experience and the most listing, including things you won't find anywhere else."
           title={"Buy a home"}
           btnContent="Search Homes"
-          link_url={"/listing"}
+          link_url={"/sell_listing"}
         />
         <Card_HomePage
           imageUrl="https://www.zillowstatic.com/s3/homepage/static/Sell_a_home.webp"
           image_alt="Sell a home"
           description="Find your place with an immersive photo experience and the most listing, including things you won't find anywhere else."
-          title={"Sell a Home"}
+          title={"Listing a Home"}
           btnContent="GO LISTING"
           link_url={"/profile"}
         />
@@ -61,7 +61,7 @@ function Home() {
           description="We're creating a seamless online experience - from shopping on the largest rental network, to applying, to paying rent."
           title={"Rent a home"}
           btnContent="Find Rentals"
-          link_url={"/rent-listing"}
+          link_url={"/rent_listing"}
         />
       </div>
     </>
